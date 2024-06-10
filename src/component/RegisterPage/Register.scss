@@ -1,0 +1,131 @@
+$primary-color: #4a90e2;
+$secondary-color: #ffffff;
+$error-color: #e74c3c;
+$input-border-color: #bdc3c7;
+$input-focus-color: $primary-color;
+$button-bg-color: $primary-color;
+$button-hover-bg-color: darken($primary-color, 10%);
+$container-bg-color: #f7f9fc;
+$container-border-color: #ecf0f1;
+$container-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: $container-bg-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.containerregister {
+    background-color: $secondary-color;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: $container-shadow;
+    border: 1px solid $container-border-color;
+    width: 400px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+
+    h2 {
+        margin-bottom: 20px;
+        color: $primary-color;
+        font-size: 1.5em;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        input {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid $input-border-color;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+
+            &:focus {
+                border-color: $input-focus-color;
+                outline: none;
+                box-shadow: 0 0 8px rgba($primary-color, 0.2);
+            }
+        }
+
+        button {
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: $button-bg-color;
+            color: $secondary-color;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+
+            &:hover {
+                background-color: $button-hover-bg-color;
+                transform: translateY(-3px);
+            }
+
+            &:active {
+                transform: translateY(1px);
+            }
+        }
+    }
+
+    .login-link {
+        margin-top: 20px;
+
+        a {
+            color: $primary-color;
+            text-decoration: none;
+            transition: color 0.3s;
+
+            &:hover {
+                color: darken($primary-color, 10%);
+            }
+        }
+    }
+
+    .error {
+        color: $error-color;
+        margin-bottom: 20px;
+        animation: shake 0.5s;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
